@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Blog } = require("../models");
 
+// change from insomnia view to .render('homepage')
 router.get('/', async (req, res) => {
     try {
         // get all blogs and associated user name 
