@@ -8,10 +8,10 @@ const seedAll = async () => {
   console.log("\n----- DATABASE SYNCED -----\n");
 
   await seedUsers();
-  console.log("\n ----- USERS SEEDED -----N");
+  console.log("\n ----- USERS SEEDED -----\n");
 
   await seedBlogs();
-  console.log("\n ----- BLOGS SEEDED -----");
+  console.log("\n ----- BLOGS SEEDED ----- \n");
 };
 
 seedAll();
