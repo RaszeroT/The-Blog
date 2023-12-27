@@ -8,3 +8,8 @@ Blog.belongsTo(User, {
 User.hasMany(Blog, {
   foreignKey: "user_id",
 });
+
+module.exports = {
+User,
+Blog
+};
