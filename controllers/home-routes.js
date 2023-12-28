@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
     //     logged_in: req.session.logged_in
     // }
     // ))
-    console.log(blogs)
+    console.log(blogs);
     res.status(200).json(blogs);
   } catch (error) {
     res.status(500).json(error);
@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
 router.get("/blog/:id", async (req, res) => {
   try {
     const blogId = await Blog.findByPk(req.params.id, {
-      attributes: ['title', 'blog'],
+      attributes: ["title", "blog"],
       include: [
         {
           model: User,
@@ -55,8 +55,21 @@ router.get("/blog/:id", async (req, res) => {
   }
 });
 
+router.post("/signup", async (req, res) => {
+  try {
+    const createUser = await User.create(req.body);
 
+    req.session.save(() => {
+      req.session.user_id = createUser.id;
+      req.session.logged_in = true;
 
+      res.status(200).json(createUser);
+    });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json(error);
+  }
+});
 
 module.exports = router;
 
@@ -67,15 +80,6 @@ module.exports = router;
 // TODO: ^^^ Get route to render all blogs to homepage is ready... Figure out handlebars bug
 
 // --------------------------------------------
-
-// WHEN I click on the homepage option
-// THEN I am taken to the homepage
-// WHEN I click on any other links in the navigation
-// THEN I am prompted to either sign up or sign in
-// WHEN I choose to sign up
-
-// TODO: ^^^ created sign-up/sign-in views (preferably separate or a login page with a following link to a sign-up page)
-// ---------------------------------------------
 
 // THEN I am prompted to create a username and password
 // WHEN I click on the sign-up button
@@ -130,4 +134,15 @@ module.exports = router;
 
 // WHEN I am idle on the site for more than a set time
 // THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
+
 // TODO: ^^^ add session with time
+// -------------------------------------------------
+
+// WHEN I click on the homepage option
+// THEN I am taken to the homepage
+// WHEN I click on any other links in the navigation
+// THEN I am prompted to either sign up or sign in
+// WHEN I choose to sign up
+
+// TODO: ^^^ created sign-up/sign-in views (preferably separate or a login page with a following link to a sign-up page)
+// ---------------------------------------------

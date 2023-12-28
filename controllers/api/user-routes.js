@@ -1,13 +1,17 @@
 const router = require("express").Router();
 const { User } = require("../../models/");
 
+
+// TODO: remove id and password from rendering to homepage
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: {
-        exclude: ["id", "password"],
-      },
-    });
+    const userData = await User.findAll(
+    //   {
+    //   attributes: {
+    //     exclude: ["id", "password"],
+    //   },
+    // }
+    );
     const users = userData.map((user) => user.get({ plain: true }));
     console.log(users);
     res.status(200).json(users);
@@ -15,6 +19,9 @@ router.get("/", async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+
+
 
 router.post("");
 
