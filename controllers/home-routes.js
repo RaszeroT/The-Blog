@@ -71,6 +71,39 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+router.post('/login', async (req, res) => {
+  try {
+    const loginUser = await User.findOne({ where: { email: req.body.email } });
+
+    if (!loginUser) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    const validPassword = await loginUser.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = loginUser.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: loginUser, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
 
 // GIVEN a CMS-style blog site
@@ -81,12 +114,6 @@ module.exports = router;
 
 // --------------------------------------------
 
-// THEN I am prompted to create a username and password
-// WHEN I click on the sign-up button
-// THEN my user credentials are saved and I am logged into the site
-
-// TODO: ^^^ create post to create new user.
-// ------------------------------------------------
 
 // WHEN I revisit the site at a later time and choose to sign in
 // THEN I am prompted to enter my username and password
@@ -146,3 +173,10 @@ module.exports = router;
 
 // TODO: ^^^ created sign-up/sign-in views (preferably separate or a login page with a following link to a sign-up page)
 // ---------------------------------------------
+
+// THEN I am prompted to create a username and password
+// WHEN I click on the sign-up button
+// THEN my user credentials are saved and I am logged into the site
+
+// TODO: ^^^ create post to create new user.
+// ------------------------------------------------
