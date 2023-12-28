@@ -55,82 +55,16 @@ router.get("/blog/:id", async (req, res) => {
   }
 });
 
-router.post("/signup", async (req, res) => {
-  try {
-    const createUser = await User.create(req.body);
-
-    req.session.save(() => {
-      req.session.user_id = createUser.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(createUser);
-    });
-  } catch (error) {
-    console.log(error)
-    res.status(500).json(error);
-  }
-});
-
-router.post('/login', async (req, res) => {
-  try {
-    const loginUser = await User.findOne({ where: { email: req.body.email } });
-
-    if (!loginUser) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
-
-    const validPassword = await loginUser.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.user_id = loginUser.id;
-      req.session.logged_in = true;
-      
-      res.json({ user: loginUser, message: 'You are now logged in!' });
-    });
-
-  } catch (err) {
-    console.log(err)
-    res.status(400).json(err);
-  }
-});
-
 module.exports = router;
 
-// GIVEN a CMS-style blog site
-// WHEN I visit the site for the first time
-// THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-
-// TODO: ^^^ Get route to render all blogs to homepage is ready... Figure out handlebars bug
-
-// --------------------------------------------
 
 
-// WHEN I revisit the site at a later time and choose to sign in
-// THEN I am prompted to enter my username and password
-
-// TODO: ^^^ email and password match. if same redirect to their dashboard.
-// ------------------------------------------------
-
-// WHEN I am signed in to the site
-// THEN I see navigation links for the homepage, the dashboard, and the option to log out
-// WHEN I click on the homepage option in the navigation
-// THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
-
-// TODO: ^^^ use helper to add created date to blog and comments
-// ------------------------------------------------
 
 // WHEN I click on an existing blog post
 // THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
+
+// TODO: ^^^ ability to click and comment 
+
 // WHEN I enter a comment and click on the submit button while signed in
 // THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
 
@@ -179,4 +113,27 @@ module.exports = router;
 // THEN my user credentials are saved and I am logged into the site
 
 // TODO: ^^^ create post to create new user.
+// ------------------------------------------------
+
+// GIVEN a CMS-style blog site
+// WHEN I visit the site for the first time
+// THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
+
+// TODO: ^^^ Get route to render all blogs to homepage is ready... Figure out handlebars bug
+
+// --------------------------------------------
+
+// WHEN I revisit the site at a later time and choose to sign in
+// THEN I am prompted to enter my username and password
+
+// TODO: ^^^ email and password match. if same redirect to their dashboard.
+// ------------------------------------------------
+
+
+// WHEN I am signed in to the site
+// THEN I see navigation links for the homepage, the dashboard, and the option to log out
+// WHEN I click on the homepage option in the navigation
+// THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
+
+// TODO: ^^^ use helper to add created date to blog and comments
 // ------------------------------------------------
