@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { User, Blog } = require("../models");
 const withAuth = require("../utils/auth");
 
-// change from insomnia view to .render('homepage')
 router.get("/", async (req, res) => {
   try {
     // get all blogs and associated user name
@@ -17,12 +16,12 @@ router.get("/", async (req, res) => {
 
     // serialize data
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    res.status(200).json(blogs);
     // res.render(('homepage', {
-    //     projects,
+    //     blogs,
     //     logged_in: req.session.logged_in
     // }
     // ))
+    res.status(200).json(blogs)
   } catch (error) {
     res.status(500).json(error);
   }
@@ -42,12 +41,11 @@ router.get("/blog/:id", async (req, res) => {
           });
           //   return simplified data
           const blog = blogId.get({ plain: true });
-          res.status(200).json(blog);
-          // res.render(('homepage', {
-          //     projects,
-          //     logged_in: req.session.logged_in
-          // }
-          // ))
+          res.render(('blogPage', {
+              blog,
+              // logged_in: req.session.logged_in
+          }
+          ))
     } catch (error) {
         res.status(500).json(error)
     }
