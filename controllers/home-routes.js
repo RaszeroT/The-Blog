@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Blog } = require("../models");
+const { User, Blog, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -41,11 +41,12 @@ router.get("/blog/:id", async (req, res) => {
           });
           //   return simplified data
           const blog = blogId.get({ plain: true });
-          res.render(('blogPage', {
-              blog,
-              // logged_in: req.session.logged_in
-          }
-          ))
+          // res.render(('blogPage', {
+          //     blog,
+          //     logged_in: req.session.logged_in
+          // }
+          // ))
+          res.status(200).json(blog)
     } catch (error) {
         res.status(500).json(error)
     }
