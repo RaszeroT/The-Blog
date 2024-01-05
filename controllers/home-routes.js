@@ -17,13 +17,13 @@ router.get("/", async (req, res) => {
 
     // serialize data
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    // res.render(('homepage', {
-    //     blogs,
-    //     logged_in: req.session.logged_in
-    // }
-    // ))
-    console.log(blogs);
-    res.status(200).json(blogs);
+    res.render('homepage', {
+        blogs,
+        logged_in: req.session.logged_in
+    }
+    )
+    // console.log(blogs);
+    // res.status(200).json(blogs);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -60,16 +60,7 @@ module.exports = router;
 
 
 
-// WHEN I click on an existing blog post
-// THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
 
-// TODO: ^^^ ability to click and comment 
-
-// WHEN I enter a comment and click on the submit button while signed in
-// THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-
-// TODO: ^^^ create render to blogpost for a click for /blog/:id... add ability to comment
-// -----------------------------------------------
 
 // WHEN I click on the dashboard option in the navigation
 // THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
@@ -137,3 +128,14 @@ module.exports = router;
 
 // TODO: ^^^ use helper to add created date to blog and comments
 // ------------------------------------------------
+
+// WHEN I click on an existing blog post
+// THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
+
+// TODO: ^^^ ability to click and comment 
+
+// WHEN I enter a comment and click on the submit button while signed in
+// THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
+
+// TODO: ^^^ create render to blogpost for a click for /blog/:id... add ability to comment
+// -----------------------------------------------
