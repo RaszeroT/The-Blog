@@ -22,13 +22,18 @@ router.get("/", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const createUser = await User.create(req.body);
+    const newUser = new User();
+    newUser.name = req.body.name;
+    newUser.email = req.body.email;
+    newUser.password = req.body.password;
+
+    const userData = await newUser.save();
 
     req.session.save(() => {
-      req.session.user_id = createUser.id;
+      req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(createUser);
+      res.status(200).json(userData);
     });
   } catch (error) {
     console.log(error);

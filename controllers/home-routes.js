@@ -17,11 +17,10 @@ router.get("/", async (req, res) => {
 
     // serialize data
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    res.render('homepage', {
-        blogs,
-        logged_in: req.session.logged_in
-    }
-    )
+    res.render("homepage", {
+      blogs,
+      logged_in: req.session.logged_in,
+    });
     // console.log(blogs);
     // res.status(200).json(blogs);
   } catch (error) {
@@ -55,12 +54,23 @@ router.get("/blog/:id", async (req, res) => {
   }
 });
 
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/homepage");
+    return;
+  }
+  res.render("signup");
+});
+
+router.get("/login", (req,res) => {
+  if (req.session.logged_in) {
+    res.redirect("/homepage")
+    return
+  }
+  res.render("login")
+})
+
 module.exports = router;
-
-
-
-
-
 
 // WHEN I click on the dashboard option in the navigation
 // THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
@@ -120,7 +130,6 @@ module.exports = router;
 // TODO: ^^^ email and password match. if same redirect to their dashboard.
 // ------------------------------------------------
 
-
 // WHEN I am signed in to the site
 // THEN I see navigation links for the homepage, the dashboard, and the option to log out
 // WHEN I click on the homepage option in the navigation
@@ -132,7 +141,7 @@ module.exports = router;
 // WHEN I click on an existing blog post
 // THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
 
-// TODO: ^^^ ability to click and comment 
+// TODO: ^^^ ability to click and comment
 
 // WHEN I enter a comment and click on the submit button while signed in
 // THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created

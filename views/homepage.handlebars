@@ -1,7 +1,18 @@
-<div>
-   {{#each posts}}
-    <section >
 
-    </section>
-   {{/each}}
-</div>
+{{!-- if there are any past blogs, show here in separate cards --}}
+<section>
+   <div> {{! wrapper for entire card}}
+      {{#each blogs as |blog|}}
+      <div> {{! card title div }}
+         <h3>
+            <a href="/blog/{{id}}">{{title}}</a>
+         </h3>
+         <div> {{! card body div}}
+            <div> {{! created by and date div}}
+               <p>Created by: {{user.name}} Date: {{format_date createdAt}}</p>
+            </div>
+         </div>
+      </div>
+      {{/each}}
+   </div> 
+</section>
