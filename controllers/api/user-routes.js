@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
 router.post("/signup", async (req, res) => {
   try {
     const newUser = new User();
-    newUser.name = req.body.name;
+    newUser.username = req.body.username;
     newUser.email = req.body.email;
     newUser.password = req.body.password;
 
@@ -73,6 +73,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("");
+
 
 module.exports = router;
