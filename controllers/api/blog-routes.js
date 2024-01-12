@@ -44,4 +44,16 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  try {
+    const newBlog = await Blog.create({ 
+      ...req.body, 
+      user_id: req.session.user_id 
+    })
+      res.status(200).json(newBlog)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+})
+
 module.exports = router;
