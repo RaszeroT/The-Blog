@@ -10,10 +10,10 @@
 
   {{! if logged in allow create comment }}
   {{#if logged_in}}
-    <form>
-      <label for="comment">Comment:</label>
-      <textarea id="new-comment" placeholder="Write comment"></textarea>
-      <button id="comment-btn" type="submit">Submit</button>
+    <form id="new-comment-form">
+      <label>Comment:</label>
+      <textarea id="new-comment-input" placeholder="Write comment"></textarea>
+      <button type="submit">Submit</button>
     </form>
   {{/if}}
 

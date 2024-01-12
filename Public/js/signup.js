@@ -21,6 +21,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document
-  .getElementById("signup-form")
-  .addEventListener("submit", signupFormHandler);
+const signupForm = document.getElementById("signup-form")
+if (signupForm) {
+  signupForm.addEventListener("submit", signupFormHandler);
+}
