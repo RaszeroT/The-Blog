@@ -1,0 +1,18 @@
+{{!-- blog page --}}
+<section>
+    {{!-- show blog --}}
+    <article>
+    <h1>{{title}}</h1>
+    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
+    <p>{{blog}}</p>
+    </article>
+
+    {{!-- if logged in allow create comment --}}
+    {{#if logged_in}}
+    <form>
+        <label for="comment">Comment:</label>
+        <textarea id="new-comment" placeholder="Write comment"></textarea>
+        <button id="comment-btn" type="submit">Submit</button>
+    </form>
+    {{/if}}
+</section>
