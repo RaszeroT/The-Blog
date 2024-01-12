@@ -36,11 +36,16 @@ router.get("/blog/:id", withAuth, async (req, res) => {
       include: [
         { model: User, 
           attributes: ["username"] },
-        {
-          model: Comment,
-          include: [
-          ],
-        },
+          {
+            model: Comment,
+            attributes: ["comment"],
+            include: [
+              {
+                model: User,
+                attributes: ["username"],
+              },
+            ],
+          },
       ],
     });
     //   return simplified data

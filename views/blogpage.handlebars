@@ -1,18 +1,33 @@
-{{!-- blog page --}}
-<section>
-    {{!-- show blog --}}
-    <article>
-    <h1>{{title}}</h1>
-    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
+{{! blog page }}
+<main>
+  {{! show blog }}
+  <article>
+    <h2>{{title}}</h2>
     <p>{{blog}}</p>
-    </article>
+    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
 
-    {{!-- if logged in allow create comment --}}
-    {{#if logged_in}}
+  </article>
+
+  {{! if logged in allow create comment }}
+  {{#if logged_in}}
     <form>
-        <label for="comment">Comment:</label>
-        <textarea id="new-comment" placeholder="Write comment"></textarea>
-        <button id="comment-btn" type="submit">Submit</button>
+      <label for="comment">Comment:</label>
+      <textarea id="new-comment" placeholder="Write comment"></textarea>
+      <button id="comment-btn" type="submit">Submit</button>
     </form>
-    {{/if}}
-</section>
+  {{/if}}
+
+  {{! comment history }}
+  <section>
+    <div> 
+        {{! comment card}}
+        {{#each comments}}
+        <p>{{comment}}</p>
+            </div>
+    <div> 
+        {{! created by card}}
+        <p>By: {{user.username}} on {{format_date createdAt}}</p>
+    </div>
+        {{/each}}
+  </section>
+</main>
