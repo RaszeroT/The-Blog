@@ -78,6 +78,14 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+router.get("/newblog", (req, res) => {
+  if (req.session.logged_in) {
+    res.render("newblog");
+    return;
+  }
+  res.redirect("/login");
+});
+
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");

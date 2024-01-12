@@ -1,20 +1,27 @@
 <main>
- 
- <h3>
-    <a href="/newblog">Click here to create a new blog</a>
- </h3>
 
-    {{!-- old posts from user  --}}
-    <article>
-        {{#each blogs}}
-        <div>
-            {{!-- card title div --}}
-            {{title}}
-        </div>
-        <div>
-            {{!-- card body div --}}
-            {{blog}}
-        </div>
-        {{/each}}
-    </article>
+  <h3>
+    <a href="/newblog">Click here to create a new blog</a>
+  </h3>
+
+  {{! old posts from user  }}
+  <article>
+    {{#each blogs}}
+      <div>
+        {{! card title div }}
+        <a href="/blog/{{id}}">{{title}}</a>
+      </div>
+      <div>
+        {{! card body div }}
+        {{blog}}
+      </div>
+      {{! buttons div }}
+      <div>
+        {{!-- edit blog button --}}
+        <button><a href="/editblog"></a>Edit</button>
+        {{!-- delete blog button --}}
+        <button>DELETE</button>
+      </div>
+    {{/each}}
+  </article>
 </main>
