@@ -1,17 +1,24 @@
 {{! edit post template }}
 <section>
   <div>
-    {{! title div }}
-  </div>
-  <div>
-    {{! blog div }}
-  </div>
+    {{! edit blog form }}
+    <form id="edit-blog-form">
+        {{!-- title input --}}
+        <label>title:</label>
+        <input id="edit-title-input" type="text" placeholder="Enter new title:" value="{{title}}">
+        {{!-- blog input --}}
+        <label>Blog:</label>
+        <textarea id="edit-blog-input" placeholder="Enter new blog:">{{blog}}</textarea>
+    </form>
   <div>
     {{! created date div }}
+    <p>
+        {{format_date createdAt}}
+    </p>
   </div>
   <div>
     {{! buttons div  }}
-    <button id="edit-btn">Submit Change</button>
+    <button id="edit-btn">Submit Change/s</button>
     <button id="delete">Delete</button>
   </div>
 </section>
