@@ -3,10 +3,10 @@
   <div>
     {{! wrapper for entire card}}
     {{#each blogs}}
-      <div>
+      <div class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600 w-3/12">
         {{! card title div }}
         
-          <a href="/blog/{{id}}">{{title}}</a>
+          <a class="title text-xl hover:underline" href="/blog/{{id}}">{{title}}</a>
         
           {{! card body div}}
           <div>
@@ -18,3 +18,5 @@
     {{/each}}
   </div>
 </section>
+
+{{!-- TODO: get cards to stack side by side --}}
