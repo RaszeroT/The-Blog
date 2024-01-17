@@ -1,8 +1,8 @@
-<main>
+<main class="text-center">
 
   <h3>
     <a
-      class="w-6/12 block text-center border border-gray-200 rounded-lg px-4 hover:bg-gray-400"
+      class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400"
       href="/newblog"
     >Click here to create a new blog</a>
   </h3>
@@ -11,7 +11,7 @@
   <article>
     {{#each blogs}}
       <div
-        class="block text-center rounded-xl overflow-hidden shadow-lg p-10 m-10 bg-gray-600 w-11/12"
+        class="rounded-xl shadow-lg p-10 m-10 bg-gray-600"
       >
         <div>
           {{! card title div }}
@@ -25,7 +25,7 @@
         <div>
           {{! edit blog button }}
           <a
-            class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400"
+            class="border border-gray-200 rounded-lg px-4  hover:bg-gray-400"
             href="/editblog/{{id}}"
           >Edit</a>
         </div>
@@ -35,5 +35,5 @@
 </main>
 
 {{! TODO: change blog content to hold 1000 words }}
-{{! TODO: get blog to take entire page width  }}
-{{! TODO: get create blog button to space from top and center to page }}
+{{! TODO: get blog to take entire page width --- runs over footer }}
+{{! TODO: get create blog button to space from top }}

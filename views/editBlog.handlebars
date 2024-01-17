@@ -1,27 +1,21 @@
 {{! edit post template }}
-<section>
+<section class="text-center p-10">
   <div>
     {{! edit blog form }}
     <form id="edit-blog-form">
         {{!-- title input --}}
-        <label class="block text-center">Edit title:</label>
+        <label>Edit title:</label>
         <input id="edit-title-input" type="text" placeholder="Enter new title:" value="{{title}}" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none">
         {{!-- blog input --}}
-        <label class="block text-center">Edit Blog:</label>
+        <label>Edit Blog:</label>
         <textarea rows="20" id="edit-blog-input" placeholder="Enter new blog:" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none">{{blog}}</textarea>
         {{!-- submit button --}}
-        <button type="submit" class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400">Submit Change/s</button>
-
+        <button type="submit"  class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400 m-3">Submit Change/s</button>
     </form>
-  <div>
     {{! created date div }}
-    <p>
-        {{format_date createdAt}}
-    </p>
-  </div>
   <div>
     {{! buttons div  }}
-    <button id="delete" class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400">Delete</button>
+    <button id="delete"  class="bg-red-900 border border-gray-200 rounded-lg px-4  hover:bg-gray-400">Delete</button>
   </div>
 </section>
 

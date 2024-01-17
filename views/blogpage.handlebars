@@ -1,8 +1,8 @@
 {{! blog page }}
-<main>
+<main class="text-center">
   {{! show blog }}
   <article>
-    <h2>{{title}}</h2>
+    <h2 class="title text-3xl p-5">{{title}}</h2>
     <p>{{blog}}</p>
     <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
 
@@ -12,8 +12,10 @@
   {{#if logged_in}}
     <form id="new-comment-form">
       <label>Comment:</label>
-      <textarea id="new-comment-input" placeholder="Write comment"></textarea>
-      <button type="submit">Submit</button>
+      <textarea rows="1" id="new-comment-input" placeholder="Write comment" class="text-black border text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"></textarea>
+
+      {{!-- submit comment button  --}}
+      <button type="submit" class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400">Submit</button>
     </form>
   {{/if}}
 
