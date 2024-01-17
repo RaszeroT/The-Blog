@@ -9,7 +9,7 @@
     />
     <title>TheBlog</title>
   </head>
-  <body class="bg-gray-600 text-gray-200 font">
+  <body class="bg-gray-600 text-gray-200">
 
     {{! Header }}
     <header class="flex items-stretch w-screen">
@@ -25,7 +25,7 @@
           <ul class="flex justify-between float-right">
             <li class="mr-3">
               <a
-                class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                class="inline-block border border-gray-600 rounded-lg py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
                 href="/"
               >Home</a>
             </li>
@@ -34,14 +34,14 @@
               <li>
                 <a
                   id="dashboard"
-                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  class="inline-block border border-gray-600 rounded-lg py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
                   href="/dashboard"
                 >Dashboard</a>
               </li>
               <li>
                 <a
                   id="logout"
-                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  class="inline-block border border-gray-600 rounded-lg py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
                   href="/logout"
                 >Logout</a>
               </li>
@@ -92,3 +92,5 @@
     <script src="/js/editBlog.js"></script>
   </body>
 </html>
+
+{{!-- TODO: get nav to stay to the right --}}
