@@ -1,17 +1,30 @@
-   {{!-- new blog page --}}
-       <h3 class="text-center">Create a blog!!</h3>
+{{! new blog page }}
+<h3 class="text-center">Create a blog!!</h3>
 
-   <form id="new-blog-form" class="">
+<form id="new-blog-form" class="">
 
-        {{!-- title input  --}}
-        <label class="block text-center">Title:</label>
-        <input id="title-input" type="text" placeholder="Title:" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10"><br>
+  {{! title input  }}
+  <label class="block text-center">Title:</label>
+  <input
+    id="title-input"
+    type="text"
+    placeholder="Title:"
+    class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10"
+  /><br />
 
-        {{!-- blog input  --}}
-        <label class="block text-center">Write your new blog here:</label>
-        <textarea rows="20" id="new-blog-input" placeholder="Create here:" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"></textarea>
-        <button type="submit" class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400">submit</button>
-    </form>
+  {{! blog input  }}
+  <label class="block text-center">Write your new blog here:</label>
+  <textarea
+    rows="20"
+    id="new-blog-input"
+    placeholder="Create here:"
+    class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"
+  ></textarea>
+  <button
+    type="submit"
+    class="block border border-gray-200 rounded-lg px-4 hover:bg-gray-400"
+  >submit</button>
+</form>
 
-    {{!-- TODO: get submit button center --}}
-    {{!-- TODO: get blogs to hold more than 30 words --}}
+{{! TODO: get submit button center }}
+{{! TODO: get blogs to hold more than 30 words }}

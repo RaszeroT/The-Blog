@@ -4,13 +4,13 @@
     {{! edit blog form }}
     <form id="edit-blog-form">
         {{!-- title input --}}
-        <label>title:</label>
-        <input id="edit-title-input" type="text" placeholder="Enter new title:" value="{{title}}">
+        <label class="block text-center">Edit title:</label>
+        <input id="edit-title-input" type="text" placeholder="Enter new title:" value="{{title}}" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none">
         {{!-- blog input --}}
-        <label>Blog:</label>
-        <textarea id="edit-blog-input" placeholder="Enter new blog:">{{blog}}</textarea>
+        <label class="block text-center">Edit Blog:</label>
+        <textarea rows="20" id="edit-blog-input" placeholder="Enter new blog:" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none">{{blog}}</textarea>
         {{!-- submit button --}}
-        <button type="submit">Submit Change/s</button>
+        <button type="submit" class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400">Submit Change/s</button>
 
     </form>
   <div>
@@ -21,7 +21,7 @@
   </div>
   <div>
     {{! buttons div  }}
-    <button id="delete">Delete</button>
+    <button id="delete" class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400">Delete</button>
   </div>
 </section>
 
