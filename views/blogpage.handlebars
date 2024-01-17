@@ -1,8 +1,8 @@
 {{! blog page }}
 <main class="text-center">
   {{! show blog }}
-  <article class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600">
-    <h2 class="title text-3xl p-5">{{title}}</h2>
+  <article class="text-center rounded-xl shadow-lg p-10 m-5 bg-gray-800">
+    <h2 class="title text-4xl text-gray-600 font-black">{{title}}</h2>
     <p>{{blog}}</p>
     <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
 
@@ -12,14 +12,14 @@
   {{#if logged_in}}
     <form
       id="new-comment-form"
-      class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600"
+      class="text-center rounded-xl shadow-lg p-10 m-5 bg-gray-800"
     >
       <label>Comment:</label>
       <textarea
         rows="1"
         id="new-comment-input"
         placeholder="Write comment"
-        class="text-black border text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"
+        class="text-black border text-center rounded-lg w-full px-10 resize-none"
       ></textarea>
 
       {{! submit comment button  }}
@@ -35,7 +35,7 @@
 
     {{! comment card}}
     {{#each comments}}
-   <div class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600">
+   <div class="text-center rounded-xl shadow-lg m-5 bg-gray-800">
        <div>
         <p>{{comment}}</p>
       </div>
