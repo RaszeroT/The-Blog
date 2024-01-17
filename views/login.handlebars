@@ -1,19 +1,32 @@
-{{!-- login page  --}}
+{{! login page  }}
 
-{{!-- main --}}
+{{! main }}
 <section class="flex flex-wrap place-content-center p-10">
-    {{!-- form --}}
-    <form id="login-form" class="p-10 ">
-        {{!-- name --}}
-        <label for="username" class="block text-center">Username:</label>
-        <input type="text" id="username-login" placeholder="Username" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full p-2.5">
-        {{!-- password --}}
-        <label for="password" class="block text-center">Password:</label>
-        <input type="password" id="password-login" placeholder="Password" class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full p-2.5">
-        {{!-- submit --}}
-        <button class="block border border-gray-200 rounded-lg px-4 hover:border-green-500 hover:bg-green-400" type="submit">Login</button>
-    </form>
+  {{! form }}
+  <form id="login-form" class="p-10">
+    {{! name }}
+    <label for="username" class="block text-center">Username:</label>
+    <input
+      type="text"
+      id="username-login"
+      placeholder="Username"
+      class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10"
+    />
+    {{! password }}
+    <label for="password" class="block text-center">Password:</label>
+    <input
+      type="password"
+      id="password-login"
+      placeholder="Password"
+      class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full"
+    />
+    {{! submit }}
+    <button
+      class="block border border-gray-200 rounded-lg px-4 hover:border-green-500 hover:bg-green-400"
+      type="submit"
+    >Login</button>
+  </form>
 </section>
 
-{{!-- TODO: change focus color from blue to gray --}}
-{{!-- TODO: get login button center to inputs --}}
+{{! TODO: change focus color from blue to gray }}
+{{! TODO: get login button center to inputs }}

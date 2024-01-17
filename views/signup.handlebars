@@ -1,18 +1,40 @@
-{{!-- signup --}}
+{{! signup }}
 
-<section>
-    {{!-- form  --}}
-    <form id="signup-form">
-        {{!-- Name --}}
-        <label for="username">Username:</label>
-        <input type="text" id="username-signup" placeholder="Username:">
-        {{!-- email --}}
-        <label for="email">Email:</label>
-        <input type="text" id="email-signup" placeholder="Email:">
-        {{!-- password --}}
-        <label for="password">Password:</label>
-        <input type="password" id="password-signup" placeholder="Password must be more than 8 characters in length">
-        {{!-- button --}}
-        <button type="submit">Submit</button>
-    </form>
+<section class="flex flex-wrap place-content-center min-h-10">
+  {{! form  }}
+  <form id="signup-form" class="p-10">
+    {{! Name }}
+    <label for="username" class="block text-center">Username:</label>
+    <input
+      type="text"
+      id="username-signup"
+      placeholder="Create username:"
+      class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10"
+    />
+    {{! email }}
+    <label for="email" class="block text-center">Email:</label>
+    <input
+      type="text"
+      id="email-signup"
+      placeholder="Email:"
+      class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full"
+    />
+    {{! password }}
+    <label for="password" class="block text-center">Password:</label>
+    <input
+      type="password"
+      id="password-signup"
+      placeholder="Create password:"
+      class="text-black border border-green-500 text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full"
+    />
+    <p>Password must be 8 or more characters in length</p>
+
+    {{! button }}
+    <button
+      type="submit"
+      class="block border border-gray-200 rounded-lg px-4 hover:border-green-500 hover:bg-green-400"
+    >Submit</button>
+  </form>
 </section>
+
+{{! TODO: get submit button to be center to form }}
