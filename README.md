@@ -92,7 +92,7 @@ handlebars@4.7.8
 
 ## Video Tutorial:
 
-<a href=''>Video Tutorial</a>
+<a href=''>COMING SOON!</a>
 
 ## License
 

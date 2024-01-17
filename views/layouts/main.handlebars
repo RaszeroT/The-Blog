@@ -1,19 +1,19 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {{!-- <link
+    <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
-    /> --}}
+    />
     <title>TheBlog</title>
   </head>
-  <body>
+  <body
+  class="p-8">
 
     {{! Header }}
     <header>
-      <h1>
+      <h1 class="p-8">
         <a href="/">The<span id="title-blog">BLOG</span></a>
       </h1>
 
@@ -25,13 +25,12 @@
           </li>
           {{! if logged in show sign-out button }}
           {{#if logged_in}}
-             <li>
+            <li>
               <a id="dashboard" href="/dashboard">Dashboard</a>
             </li>
             <li>
               <a id="logout" href="/logout">Logout</a>
             </li>
-         
 
             {{! if logged out show login/signup }}
           {{else}}
