@@ -1,25 +1,39 @@
 <main>
 
   <h3>
-    <a href="/newblog">Click here to create a new blog</a>
+    <a
+      class="w-6/12 block text-center border border-gray-200 rounded-lg px-4  hover:bg-gray-400"
+      href="/newblog"
+    >Click here to create a new blog</a>
   </h3>
 
   {{! old posts from user  }}
   <article>
     {{#each blogs}}
-      <div>
-        {{! card title div }}
-        <a href="/editblog/{{id}}">{{title}}</a>
-      </div>
-      <div>
-        {{! card body div }}
-        {{blog}}
-      </div>
-      {{! buttons div }}
-      <div>
-        {{!-- edit blog button --}}
-        <a href="/editblog/{{id}}">Edit</a>
+      <div
+        class="block text-center rounded-xl overflow-hidden shadow-lg p-10 m-10 bg-gray-600 w-11/12"
+      >
+        <div>
+          {{! card title div }}
+          <a class="title text-xl" href="/editblog/{{id}}">{{title}}</a>
+        </div>
+        <div class="">
+          {{! card body div }}
+          {{blog}}
+        </div>
+        {{! buttons div }}
+        <div>
+          {{! edit blog button }}
+          <a
+            class="block border border-gray-200 rounded-lg px-4  hover:bg-gray-400"
+            href="/editblog/{{id}}"
+          >Edit</a>
+        </div>
       </div>
     {{/each}}
   </article>
 </main>
+
+{{! TODO: change blog content to hold 1000 words }}
+{{! TODO: get blog to take entire page width  }}
+{{! TODO: get create blog button to space from top and center to page }}

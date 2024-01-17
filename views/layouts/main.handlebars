@@ -9,21 +9,21 @@
     />
     <title>TheBlog</title>
   </head>
-  <body class="bg-gray-600 text-gray-200">
+  <body class="flex flex-col min-h-screen bg-gray-600 text-gray-200">
 
     {{! Header }}
     <header class="flex items-stretch w-screen">
       <h1 class="pl-5">
         <a href="/" class="title text-white text-5xl">The<span
-            class="title text-green-500 font-black"
+            class="title text-gray-900 font-black"
           >BLOG</span><br /><span class="flex float-right text-sm">Love your
             story.</span></a>
       </h1>
 
       {{! logout/login/sign up  }}
-      <nav class="flex items-center justify-between flex-wrap">
-        <div>
-          <ul class="flex justify-between float-right">
+      <nav class="flex items-center">
+        <div class="">
+          <ul class="flex">
             <li class="mr-3">
               <a
                 class="inline-block border border-gray-600 rounded-lg py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
@@ -72,17 +72,17 @@
     </header>
 
     {{! handlebars template }}
-    <section class="bg-green-500">
+    <section class="bg-gray-900">
       {{{body}}}
     </section>
 
     {{! footer }}
-    <Footer>
-      <div class="text-center w-screen absolute bottom-0 py-5">
+    <footer class="mt-auto">
+      <div class="text-center w-screen bottom-0">
         <p>Designed by Travis Shanhun</p>
         <p>2023</p>
       </div>
-    </Footer>
+    </footer>
 
     <script src="/js/signup.js"></script>
     <script src="/js/login.js"></script>
