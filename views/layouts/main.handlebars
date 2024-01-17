@@ -2,62 +2,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <title>TheBlog</title>
   </head>
-  <body
-  class="p-8">
+  <body class="bg-gray-600 text-gray-200 font">
 
     {{! Header }}
-    <header>
-      <h1 class="p-8">
-        <a href="/">The<span id="title-blog">BLOG</span></a>
+    <header class="flex items-stretch w-screen">
+      <h1 class="pl-5">
+        <a href="/" class="title text-white text-5xl">The<span
+            class="title text-green-500 font-black"
+          >BLOG</span><br><span class="flex float-right text-sm">Love your story.</span></a>
       </h1>
 
       {{! logout/login/sign up  }}
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          {{! if logged in show sign-out button }}
-          {{#if logged_in}}
-            <li>
-              <a id="dashboard" href="/dashboard">Dashboard</a>
+      <nav class="flex items-center justify-between flex-wrap">
+        <div>
+          <ul class="flex justify-between float-right">
+            <li class="mr-3">
+              <a
+                class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                href="/"
+              >Home</a>
             </li>
-            <li>
-              <a id="logout" href="/logout">Logout</a>
-            </li>
+            {{! if logged in show sign-out button }}
+            {{#if logged_in}}
+              <li>
+                <a
+                  id="dashboard"
+                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  href="/dashboard"
+                >Dashboard</a>
+              </li>
+              <li>
+                <a
+                  id="logout"
+                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  href="/logout"
+                >Logout</a>
+              </li>
 
-            {{! if logged out show login/signup }}
-          {{else}}
-            <li>
-              <a href="/login">
-                <span>Login</span>
-              </a>
-            </li>
-            <li>
-              <a href="/signup">
-                <span>Sign Up</span>
-              </a>
-            </li>
-          {{/if}}
-        </ul>
+              {{! if logged out show login/signup }}
+            {{else}}
+              <li>
+                <a
+                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  href="/login"
+                >
+                  <span>Login</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="inline-block border border-gray-600 rounded py-2 px-4 hover:border-gray-500 hover:bg-gray-500"
+                  href="/signup"
+                >
+                  <span>Sign Up</span>
+                </a>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
       </nav>
     </header>
 
     {{! handlebars template }}
-    <section>
+    <section class="bg-green-500">
       {{{body}}}
     </section>
 
     {{! footer }}
     <Footer>
-      <p>Designed by Travis Shanhun</p>
-      <p>2023</p>
+      <div class="text-center w-screen absolute bottom-0 py-5">
+        <p>Designed by Travis Shanhun</p>
+        <p>2023</p>
+      </div>
     </Footer>
 
     <script src="/js/signup.js"></script>

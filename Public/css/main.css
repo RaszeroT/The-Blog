@@ -1,7 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+3:wght@200&display=swap');
 
 * {
-  background-color: gray;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
 }
