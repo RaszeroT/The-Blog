@@ -22,7 +22,7 @@ const newBlogFormHandler = async (e) => {
     } else {
         console.log('Response status:', response.status);
         console.log('Response text:', await response.text());
-        alert('Failed to create a comment.'); // When unsuccessful, show alert
+        alert('Failed to create blog.'); // When unsuccessful, show alert
       }
     console.log(response);
   }
