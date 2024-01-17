@@ -1,7 +1,7 @@
 {{! blog page }}
 <main class="text-center">
   {{! show blog }}
-  <article>
+  <article class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600">
     <h2 class="title text-3xl p-5">{{title}}</h2>
     <p>{{blog}}</p>
     <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
@@ -10,26 +10,40 @@
 
   {{! if logged in allow create comment }}
   {{#if logged_in}}
-    <form id="new-comment-form">
+    <form
+      id="new-comment-form"
+      class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600"
+    >
       <label>Comment:</label>
-      <textarea rows="1" id="new-comment-input" placeholder="Write comment" class="text-black border text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"></textarea>
+      <textarea
+        rows="1"
+        id="new-comment-input"
+        placeholder="Write comment"
+        class="text-black border text-center rounded-lg focus:ring-gray-50 focus:border-gray-50 focus:border-transparent block w-full px-10 resize-none"
+      ></textarea>
 
-      {{!-- submit comment button  --}}
-      <button type="submit" class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400">Submit</button>
+      {{! submit comment button  }}
+      <button
+        type="submit"
+        class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400 mt-3"
+      >Submit</button>
     </form>
   {{/if}}
 
   {{! comment history }}
   <section>
-    <div> 
-        {{! comment card}}
-        {{#each comments}}
+
+    {{! comment card}}
+    {{#each comments}}
+   <div class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-600">
+       <div>
         <p>{{comment}}</p>
-            </div>
-    <div> 
+      </div>
+      <div>
         {{! created by card}}
         <p>By: {{user.username}} on {{format_date createdAt}}</p>
-    </div>
-        {{/each}}
+      </div>
+   </div>
+    {{/each}}
   </section>
 </main>

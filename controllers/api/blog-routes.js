@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Blog, User, Comment } = require("../../models/");
+const withAuth = require("../../utils/auth")
 
 router.get("/", async (req, res) => {
   try {
@@ -10,7 +11,6 @@ router.get("/", async (req, res) => {
       },
     });
     const blog = blogData.map((blog) => blog.get({ plain: true }));
-    // console.log(blog);
     res.status(200).json(blog);
   } catch (error) {
     res.status(500).json(error);
@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
