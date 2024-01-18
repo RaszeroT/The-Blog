@@ -1,3 +1,5 @@
+// new blog function
+
 const newBlogFormHandler = async (e) => {
   e.preventDefault();
 
@@ -17,13 +19,13 @@ const newBlogFormHandler = async (e) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-        // when successful redirect to dashboard
-        document.location.replace("/dashboard")
+      // when successful redirect to dashboard
+      document.location.replace("/dashboard");
     } else {
-        console.log('Response status:', response.status);
-        console.log('Response text:', await response.text());
-        alert('Failed to create blog.'); // When unsuccessful, show alert
-      }
+      console.log("Response status:", response.status);
+      console.log("Response text:", await response.text());
+      alert("Failed to create blog."); // When unsuccessful, show alert
+    }
     console.log(response);
   }
 };

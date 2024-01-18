@@ -1,3 +1,5 @@
+// new comment function
+
 const newCommentFormHandler = async (e) => {
   e.preventDefault();
 
@@ -12,7 +14,7 @@ const newCommentFormHandler = async (e) => {
   if (newCommentInput) {
     const response = await fetch(`/api/comments`, {
       method: "POST",
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         comment: newCommentInput,
         blog_id: blogId,
       }),
@@ -21,16 +23,14 @@ const newCommentFormHandler = async (e) => {
       },
     });
     if (response.ok) {
-        document.location.reload(); // When successful, reload the same page
-      } else {
-        console.log('Response status:', response.status);
-        console.log('Response text:', await response.text());
-        alert('Failed to create a comment.'); // When unsuccessful, show alert
-      }
+      document.location.reload(); // When successful, reload the same page
+    } else {
+      console.log("Response status:", response.status);
+      console.log("Response text:", await response.text());
+      alert("Failed to create a comment."); // When unsuccessful, show alert
+    }
     console.log(response);
   }
-
-  
 };
 
 const newComment = document.getElementById("new-comment-form");

@@ -35,15 +35,18 @@
 
     {{! comment card}}
     {{#each comments}}
-   <div class="text-left rounded-xl shadow-lg m-5 pl-3 bg-gray-800">
-       <div>
-        <p>{{comment}}</p>
+      <div class="text-left rounded-xl shadow-lg m-5 pl-3 bg-gray-800">
+        <div>
+          <p>{{comment}}</p>
+        </div>
+        <div>
+          {{! created by card}}
+          <p class="text-right pr-3">By:
+            {{user.username}}
+            on
+            {{format_date createdAt}}</p>
+        </div>
       </div>
-      <div>
-        {{! created by card}}
-        <p class="text-right pr-3">By: {{user.username}} on {{format_date createdAt}}</p>
-      </div>
-   </div>
     {{/each}}
   </section>
 </main>

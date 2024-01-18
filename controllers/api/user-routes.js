@@ -1,17 +1,14 @@
 const router = require("express").Router();
 const { User } = require("../../models/");
 
-// TODO: remove id and password from rendering to homepage
+// get all users
 router.get("/", async (req, res) => {
   try {
-    const userData = await User
-      .findAll
-      //   {
-      //   attributes: {
-      //     exclude: ["id", "password"],
-      //   },
-      // }
-      ();
+    const userData = await User.findAll({
+      attributes: {
+        exclude: ["id", "password"],
+      },
+    });
     const users = userData.map((user) => user.get({ plain: true }));
     console.log(users);
     res.status(200).json(users);
@@ -20,6 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// create new user
 router.post("/signup", async (req, res) => {
   try {
     const newUser = new User();
@@ -41,9 +39,12 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+// login with existing account
 router.post("/login", async (req, res) => {
   try {
-    const loginUser = await User.findOne({ where: { username: req.body.username } });
+    const loginUser = await User.findOne({
+      where: { username: req.body.username },
+    });
 
     if (!loginUser) {
       res
@@ -73,13 +74,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// logout
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).json({message: "You have successfully logged out"}).end();
+      res
+        .status(200)
+        .json({ message: "You have successfully logged out" })
+        .end();
     });
   } else {
-    res.status(500).json({message: "There has been an issue"}).end();
+    res.status(500).json({ message: "There has been an issue" }).end();
   }
 });
 

@@ -1,3 +1,5 @@
+// signup function
+
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,7 +23,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
-const signupForm = document.getElementById("signup-form")
+const signupForm = document.getElementById("signup-form");
 if (signupForm) {
   signupForm.addEventListener("submit", signupFormHandler);
 }

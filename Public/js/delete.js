@@ -1,3 +1,5 @@
+// delete function
+
 const deleteFunction = async (e) => {
   e.preventDefault();
 
@@ -9,10 +11,10 @@ const deleteFunction = async (e) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    document.location.replace("/dashboard")
-    alert("Blog deleted")
+    document.location.replace("/dashboard");
+    alert("Blog deleted");
   } else {
-    alert("Failed to delete")
+    alert("Failed to delete");
   }
   console.log(response);
 };

@@ -26,21 +26,20 @@ TheBLOG
 
 [License](#license)
 
-
 ## Description:
 
 This is a full stack web application that allows the user to create, edit, and delete blog posts
 
 ## Installation
 
-To install this application please fork this repo. Then, run in terminal: 
+To install this application please fork this repo. Then, run in terminal:
 //~ npm i
 
 For this application to run successfully without errors you will need to create a .env folder with the following code:
 
-* DB_NAME='blog_db'
-* DB_PASSWORD='your SQL password'
-* DB_USER='your SQL user'
+- DB_NAME='blog_db'
+- DB_PASSWORD='your SQL password'
+- DB_USER='your SQL user'
 
 To use the existing data in the seed folder please run in terminal //~ npm run seed
 
@@ -64,7 +63,7 @@ Email: shanhun.codes@gmail.com
 
 Creating this application I learned how complex a full-stack application can be even a simple application.
 
-## Dependencies 
+## Dependencies
 
 nodemon@3.0.1 (this is for live updates while creating functions. This dependency is not necessary for running the application)
 

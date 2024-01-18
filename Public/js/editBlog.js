@@ -1,3 +1,5 @@
+// edit blog function
+
 const editBlogFormHandler = async (e) => {
   e.preventDefault();
 
@@ -19,7 +21,7 @@ const editBlogFormHandler = async (e) => {
     console.log(response);
 
     if (response.ok) {
-      document.location.replace("/dashboard")
+      document.location.replace("/dashboard");
     } else {
       alert("Failed to edit blog.");
     }

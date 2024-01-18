@@ -10,12 +10,13 @@
   {{! old posts from user  }}
   <article>
     {{#each blogs}}
-      <div
-        class="rounded-xl shadow-lg p-10 m-10 bg-gray-800"
-      >
+      <div class="rounded-xl shadow-lg p-10 m-10 bg-gray-800">
         <div>
           {{! card title div }}
-          <a class="title text-2xl text-gray-600 font-black hover:underline" href="/editblog/{{id}}">{{title}}</a>
+          <a
+            class="title text-2xl text-gray-600 font-black hover:underline"
+            href="/editblog/{{id}}"
+          >{{title}}</a>
         </div>
         <div>
           {{! card body div }}
@@ -25,7 +26,7 @@
         <div>
           {{! edit blog button }}
           <a
-            class="border border-gray-200 rounded-lg px-4  hover:bg-gray-400"
+            class="border border-gray-200 rounded-lg px-4 hover:bg-gray-400"
             href="/editblog/{{id}}"
           >Edit</a>
         </div>

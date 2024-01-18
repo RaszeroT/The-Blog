@@ -11,10 +11,10 @@ const commentData = [
     blog_id: 2,
     user_id: 1,
   },
-  { 
-    comment: "AI disagree!", 
-    blog_id: 3, 
-    user_id: 1 
+  {
+    comment: "AI disagree!",
+    blog_id: 3,
+    user_id: 1,
   },
   {
     comment: "No thanks!",
