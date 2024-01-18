@@ -18,7 +18,6 @@ router.get("/", async (req, res) => {
       ],
     });
     const comment = commentData.map((comment) => comment.get({ plain: true }));
-    console.log(comment);
     res.status(200).json(comment);
   } catch (error) {
     res.status(500).json(error);
@@ -33,7 +32,6 @@ router.post("/", withAuth, async (req, res) => {
     });
     res.status(200).json(newComment);
   } catch (error) {
-    console.log(error)
     res.status(500).json(error);
   }
 });

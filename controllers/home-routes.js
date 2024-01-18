@@ -101,7 +101,7 @@ router.get("/editblog/:id", async (req, res) => {
 
 router.get("/newblog", (req, res) => {
   if (req.session.logged_in) {
-    res.render("newblog");
+    res.render("newBlog");
     return;
   }
   res.redirect("/login");
