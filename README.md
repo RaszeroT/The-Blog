@@ -1,8 +1,6 @@
-# Title:
+# TheBLOG
 
-TheBLOG
-
-## Table of Contents:
+### Table of Contents:
 
 [Description](#description)
 
@@ -92,6 +90,12 @@ handlebars@4.7.8
 ## Video Tutorial:
 
 <a href=''>COMING SOON!</a>
+
+## Credits
+* Joshua Diehl
+* Andrew Hudgins
+* Stack Overflow
+* Youtube
 
 ## License
 
