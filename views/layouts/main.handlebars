@@ -12,11 +12,11 @@
   <body class="flex flex-col min-h-screen bg-gray-600 text-gray-200 text-lg">
 
     {{! Header }}
-    <header class="flex items-stretch w-screen">
+    <header class="flex items-stretch w-screen p-3">
       <h1 class="pl-5">
-        <a href="/" class="title text-white text-5xl">The<span
+        <a href="/" class="title text-white text-5xl leading-none">The<span
             class="title text-gray-900 font-black"
-          >BLOG</span><br /><span class="flex float-right text-sm">Love your
+          >BLOG</span><br /><span class="flex float-right text-sm leading-none">Love your
             story.</span></a>
       </h1>
 
@@ -72,9 +72,9 @@
     </header>
 
     {{! handlebars template }}
-    <section class="bg-gray-900 h-5/6">
+    <main class="bg-gray-900 h-auto">
       {{{body}}}
-    </section>
+    </main>
 
     {{! footer }}
     <footer class="mt-auto">
@@ -93,6 +93,3 @@
     <script src="/js/editBlog.js"></script>
   </body>
 </html>
-
-{{! TODO: get "Love your story" to be closer to TheBLOG }}
-{{! TODO: get compatible for mobile }}

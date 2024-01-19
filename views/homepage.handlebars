@@ -1,11 +1,11 @@
 {{! if there are any past blogs, show here in separate cards }}
-<section>
-  <div>
+<section class="h-screen">
+  <div class="flex flex-wrap w-full place-content-evenly">
     {{! wrapper for entire card}}
     {{#each blogs}}
       <div class="text-center rounded-xl shadow-lg p-10 m-10 bg-gray-800 w-3/12">
         {{! card title div }}
-        
+        <div>
           <a class="title text-2xl text-gray-600 font-black hover:underline" href="/blog/{{id}}">{{title}}</a>
         
           {{! card body div}}
@@ -19,4 +19,3 @@
   </div>
 </section>
 
-{{!-- TODO: get cards to stack side by side --}}

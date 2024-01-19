@@ -1,5 +1,5 @@
 {{! blog page }}
-<main class="text-center">
+<main class="text-center h-screen">
   {{! show blog }}
   <article class="text-center rounded-xl shadow-lg p-10 m-5 bg-gray-800">
     <h2 class="title text-4xl text-gray-600 font-black">{{title}}</h2>
@@ -35,7 +35,7 @@
 
     {{! comment card}}
     {{#each comments}}
-      <div class="text-left rounded-xl shadow-lg m-5 pl-3 bg-gray-800">
+      <div class="text-left rounded-xl shadow-lg m-5 pl-3 bg-gray-800 w-6/12 mx-auto ">
         <div>
           <p>{{comment}}</p>
         </div>

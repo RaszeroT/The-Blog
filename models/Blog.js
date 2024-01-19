@@ -16,7 +16,7 @@ Blog.init(
       allowNull: false,
     },
     blog: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
