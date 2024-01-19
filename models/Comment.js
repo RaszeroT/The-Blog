@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, literal } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Comment extends Model {}
@@ -22,6 +22,14 @@ Comment.init(
         model: "blog",
         key: "id",
       },
+    },
+    date:{
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: literal("CURRENT_TIMESTAMP"),
+      validate: {
+        isDate: true
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,

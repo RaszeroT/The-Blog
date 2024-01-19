@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
   try {
     // get all blogs and associated user name
     const blogData = await Blog.findAll({
-      attributes: ["id", "title", "blog"],
+      attributes: ["id", "title", "blog", "date"],
       include: [
         {
           model: User,
@@ -21,15 +21,12 @@ router.get("/", async (req, res) => {
       blogs,
       logged_in: req.session.logged_in,
     });
-    // console.log(blogs);
-    // res.status(200).json(blogs);
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
 // get route to request blog by blog_id
-// change from insomnia to render('blogPage)
 router.get("/blog/:id", withAuth, async (req, res) => {
   try {
     const blogId = await Blog.findByPk(req.params.id, {
@@ -37,7 +34,7 @@ router.get("/blog/:id", withAuth, async (req, res) => {
         { model: User, attributes: ["username"] },
         {
           model: Comment,
-          attributes: ["comment"],
+          attributes: ["comment", "date"],
           include: [
             {
               model: User,

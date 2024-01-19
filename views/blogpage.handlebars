@@ -4,7 +4,7 @@
   <article class="text-center rounded-xl shadow-lg p-10 m-5 bg-gray-800">
     <h2 class="title text-4xl text-gray-600 font-black">{{title}}</h2>
     <p>{{blog}}</p>
-    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
+    <p>Created by: {{user.username}} | Date: {{format_date date}}</p>
 
   </article>
 
@@ -44,7 +44,7 @@
           <p class="text-right pr-3">By:
             {{user.username}}
             on
-            {{format_date createdAt}}</p>
+            {{format_date date}}</p>
         </div>
       </div>
     {{/each}}
