@@ -85,7 +85,7 @@ handlebars@4.7.8
 
 ## Link to live site:
 
-<a href="N/A">No live site to link</a>
+<a href="https://theblog-raszerot-40892167d83a.herokuapp.com/">TheBLOG</a>
 
 ## Video Tutorial:
 
