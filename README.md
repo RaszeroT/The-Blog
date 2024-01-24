@@ -91,6 +91,18 @@ handlebars@4.7.8
 
 <a href=''>COMING SOON!</a>
 
+## Images of Webpage Functionality
+
+<img src="./public/images/slogan.jpeg">
+<img src="./public/images/signup.jpeg">
+<img src="./public/images/login.jpeg">
+<img src="./public/images/home.jpeg">
+<img src="./public/images/blogpage.jpeg">
+<img src="./public/images/blogpage-comment.jpeg">
+<img src="./public/images/dashboard.jpeg">
+<img src="./public/images/createblog.jpeg">
+
+
 ## Credits
 * Joshua Diehl
 * Andrew Hudgins
